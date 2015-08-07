@@ -17,12 +17,8 @@ dat <- read.csv("household_power_consumption.txt", header=TRUE, sep=";",
                     na.strings=c("?")
                     );
 
-## Convert character variables to date format
-dat$Date <- as.Date(dat$Date, "%d/%m/%Y");
-dat$Time <- strptime(dat$Time, "%T");
-
 ## Subset the data based on Date
-dat <- subset(dat, Date==as.Date("2007-02-01") | Date==as.Date("2007-02-02"));
+dat <- subset(dat, Date=="1/2/2007" | Date=="2/2/2007");
 
 ## Open png device
 png(filename = "plot1.png", width = 480, height = 480);
